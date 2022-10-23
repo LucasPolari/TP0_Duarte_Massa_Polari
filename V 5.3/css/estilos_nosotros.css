@@ -1,0 +1,292 @@
+.contenedor {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 8vw 40vw auto auto 25vw;
+    grid-template-areas: 
+        "enlaces enlaces"
+        "header header"
+        "contenedorAcordeon contenedorAcordeon"
+        "contenedorAcordeon contenedorAcordeon"
+        "footer footer";
+}
+
+#nosotros .header{
+    background-image:url('../imgs/manosPapas.png');
+    background-position: center;
+    background-size:cover;
+}
+
+#nosotros .header h1 {
+    font-family: 'Montserrat-Black';
+    font-size: 5.5vw;
+    text-align: left;
+    padding-top: 5vw;
+}
+
+.contenedorAcordeon{
+    grid-area: contenedorAcordeon;
+    margin: 0px auto;
+    width:100%;
+} 
+
+#nosotros .acordeon{
+    background-color:#BF5B04;
+    border-bottom: solid #F2B84B thin;
+} 
+
+.tituloNosotros{
+    background-color: #732002;
+    height:8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloNosotros2{
+    background-color:#BF5B04;
+    height:8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloNosotros > h2, .tituloNosotros2 > h2{
+    font-family: 'Montserrat-Light';
+    color: #F2B84B;
+    font-size: 3vw;
+    font-weight:lighter;
+    text-align: center;
+    padding: 0vw!important;
+}
+
+#nosotros .descrp{  
+    display:grid;
+    grid-template-areas: "imagen descrp";
+    max-height: 0vw;
+    background-color:#F29A2E;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+    box-sizing: content-box;
+}
+
+#nosotros .descrp2,
+#nosotros .descrp4{  
+    display:grid;
+    grid-template-areas: 
+        "descrp imagen"
+        "epigrafe imagen";
+    max-height: 0vw;
+    background-color:#F29A2E;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+    box-sizing: content-box;
+}
+
+#nosotros .descrp3{  
+    display:grid;
+    grid-template-columns: .5fr 2fr;
+    grid-template-areas: 
+        "video descrp"
+        "epigrafe descrp";
+    max-height: 0vw;
+    background-color:#F29A2E;
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+    box-sizing: content-box;
+}
+
+.descrp p, .descrp2 p, .descrp3 p, .descrp4 p{
+    grid-area:descrp;
+}
+
+.descrp4 div:first-of-type{
+    grid-area:epigrafe;
+}
+
+.imagen{
+    grid-area:imagen;
+}
+
+#nosotros .descrp p,
+#nosotros .descrp2 p,
+#nosotros .descrp3 p, 
+#nosotros .descrp4 p {
+    margin: 1vw 2vw 4vw 2vw;
+    font-family: 'Montserrat-Regular';
+    font-size: 1.5vw;
+    color: white;
+}
+
+#nosotros .descrp p span,
+#nosotros .descrp2 p span,
+#nosotros .descrp3 p span, 
+#nosotros .descrp4 p span {
+    font-family: 'Montserrat-Bold';
+}
+
+#nosotros p a {
+    color: #732002;
+    text-decoration: none;
+}
+#nosotros p a:hover {
+    text-decoration: underline;
+}
+
+#nosotros .acordeon:hover .descrp, 
+#nosotros .acordeon:hover .descrp2, 
+#nosotros .acordeon:hover .descrp3, 
+#nosotros .acordeon:hover .descrp4{
+    padding: 5vw;
+    height: auto;
+    max-height: 100vh;
+} 
+
+#nosotros .video{
+    padding:1vh;
+}
+
+#nosotros .imagen{
+    max-width:30vw;
+    min-width:30vw;
+    margin-right: 1vh;
+    padding:1vh 1vh;
+}
+#nosotros .imagen iframe {
+    width: 100%;
+    height: 30vw;
+}
+
+/********************************************************************************
+/*********           TAMAÑO TABLET      *****************************************
+*********************************************************************************/
+@media screen and (max-width: 768px) {
+    .contenedor {
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 12vw 40vw auto auto 25vw;
+        grid-template-areas: 
+            "enlaces enlaces"
+            "header header"
+            "contenedorAcordeon contenedorAcordeon"
+            "contenedorAcordeon contenedorAcordeon"
+            "footer footer";
+    }
+    div.tituloNosotros > h2, div.tituloNosotros2 > h2{
+        display:flex;
+        padding-top:2vh;
+        font-size: 4.8vw;
+        align-content:center;
+        justify-content:center;
+    }
+    #nosotros .descrp, #nosotros .descrp2{
+        grid-template-areas: ". imagen ."
+                " descrp descrp descrp";
+        height: 0vh;
+    }
+    #nosotros .descrp3{ 
+        grid-template-areas: "video descrp"
+        "epigrafe descrp";
+        height: 0vh;
+    }
+    #nosotros .descrp4{ 
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-areas: "imagen descrp descrp"
+        "epigrafe descrp descrp";
+        height: 0vh;
+    } 
+    #nosotros .descrp p, 
+    #nosotros .descrp2 p, 
+    #nosotros .descrp3 p, 
+    #nosotros .descrp4 p{
+        margin: 1.5vw 3vw 6vw 3vw;
+        font-family: 'Montserrat-Regular';
+        font-size: 2.5vw;
+        color:white;
+    }
+    #nosotros .imagen{
+        min-width: 40vw;
+        margin-right: 1vh;
+        padding: 1vh 1vh 0 1vh;
+    }
+    #nosotros .imagen iframe {
+        width: 100%;
+        height: 50vw;
+    }  
+}
+/*******************************************************************************
+*********************   TAMAÑO CELULAR   ***************************************
+********************************************************************************/
+@media only screen and (max-width: 576px) {
+    body{
+        background-color: #732002;
+    }
+    #nosotros .header{
+        background-image:url('../imgs/manosPapas.png');
+        height:50vw;
+        background-position: center;
+        background-size:cover;
+    }
+    #nosotros .header h1 {
+        font-family: 'Montserrat-Black';
+        font-size: 8vw;
+        text-align: left;
+    }
+    .contenedor {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 22vw 50vw repeat(2,auto) 25vw;
+        grid-template-areas: 
+            "enlaces enlaces"
+            "header header"
+            "contenedorAcordeon contenedorAcordeon"
+            "contenedorAcordeon contenedorAcordeon"
+            "footer footer";
+    }
+    #nosotros .descrp{  
+        grid-template-areas:"imagen imagen"
+        "imagen descrp";
+        height: 0vh;
+    }
+    #nosotros .descrp3{  
+        display:grid;
+        grid-template-areas: "video epigrafe"
+        "descrp descrp";
+        height: 0vh;
+    }
+    #nosotros .descrp4{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas: ". imagen."
+        "descrp descrp descrp"
+        "epigrafe epigrafe epigrafe";
+        height: 0vh;
+    } 
+    div.tituloNosotros > h2, div.tituloNosotros2 > h2{
+        display:flex;
+        padding-top:2.6vh;
+        font-size: 4.8vw;
+        align-content:center;
+        justify-content:center;
+    } 
+    #nosotros .descrp p, 
+    #nosotros .descrp2 p, 
+    #nosotros .descrp3 p, 
+    #nosotros .descrp4 p{
+        margin: 2vw 4vw 6vw 4vw;
+        font-size: 3.5vw;
+        color:white;
+    }
+    #nosotros .imagen{
+        max-width:70vw;
+        min-width:70vw;
+        margin-right: 1vh;
+        padding-top:1vh;
+    }
+    #nosotros .video iframe{
+        max-width:50vw;
+        max-height:40vw;
+    }
+}

@@ -1,0 +1,623 @@
+/*-------------------------------------------------------------------------*/
+/*General------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+/*Tipografías*/
+@font-face {
+    font-family: 'Mighty Kingdom';
+    src: url('../fonts/Mighty Kingdom.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Black';
+  src: url('../fonts/Montserrat-Black.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('../fonts/Montserrat-Bold.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('../fonts/Montserrat-Light.ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../fonts/Montserrat-Regular.ttf');
+}
+/*Resteo de estilos*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+/*Ocultar barra de scroll*/
+::-webkit-scrollbar { width: 0px; height: 0px; }
+
+body {
+    background-color: #F2B84B;
+    color: #000;
+    font-family: 'Montserrat-Regular';
+}
+img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+/*-------------------------------------------------------------------------*/
+/*Inicio-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+.contenedor {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 8vw 40vw 50vw 50vw 50vw 25vw;
+    grid-template-areas: 
+        "enlaces enlaces"
+        "header header"
+        "imagen1 contenido1"
+        "contenido2 imagen2"
+        "imagen3 contenido3"
+        "footer footer";
+}
+
+.contenedor>div,
+.contenedor .header,
+.contenedor .imagen-1,
+.contenedor .imagen-2,
+.contenedor .imagen-3,
+.contenedor .contenido-1,
+.contenedor .contenido-2,
+.contenedor .contenido-3,
+.contenedor .footer {
+    background: #732002;
+}
+
+.contenedor .header {
+    background-image: url('../imgs/home_inicio.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding-left: 3vw;
+    padding-top: 25vw;
+    grid-area: header;
+}
+.contenedor .header h2 {
+    font-size: 3vw;
+    font-family: 'Montserrat-Bold';
+    font-weight: lighter;
+    text-align: left;
+    animation: texto_header 3s 1;
+}
+.contenedor .header h1 {
+    font-family: 'Montserrat-Black';
+    font-size: 5.5vw;
+    text-align: left;
+    animation: texto_header 3s 1;
+}
+.contenedor .header h1 span {
+    font-size: 4vw;
+    letter-spacing: 0.5vw;
+    margin-left: 0.5vw;
+}
+@keyframes texto_header {
+    from { margin-top: -40vw; opacity: 0; }
+    to { margin-top: 0vw; opacity: 1; }
+}
+
+.contenedor .enlaces {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 0.8fr;
+    grid-template-areas: "logo . enlaceInterno enlaceInterno enlaceInterno redes";
+    font-family: 'Montserrat-Light';
+    background-color: #732002;
+    color: white;
+    grid-area: enlaces;
+    align-items: center;
+}
+
+.contenedor .enlaces .logo {
+    grid-area: logo;
+    height: 6vw;
+    object-fit: contain;
+}
+
+.contenedor .enlaces a { /*Unifiqué las clases de los links del header en 'enlaceInterno' y cambié un poco la distribución del texto*/
+    color: white;
+    font-size: 1.6vw;
+    /*padding: 1vw 1.2vw;*/
+    text-decoration: none;
+    text-align: center;
+    /*grid-area: enlace-cab;*/
+}
+
+.contenedor .enlaces .enlaceInterno { 
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    grid-area: enlaceInterno;
+}
+
+.contenedor .enlaces a:hover {
+    color: #260101;
+    font-weight: bolder;
+}
+
+.contenedor .enlaces .redes {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-area: redes;
+}
+
+.contenedor .enlaces .redes img,
+.contenedor .enlaces .redes a {
+    width: 2vw;
+}
+
+.contenedor .enlaces .redes a:hover img {
+    transform: scale(1.2);
+}
+
+.contenedor .contenido-1 {
+    grid-area: contenido1;
+    background-color: #BF5B04;
+    padding: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenedor .contenido-2 {
+    grid-area: contenido2;
+    background-color: #F29A2E;
+    padding: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenedor .contenido-3 {
+    grid-area: contenido3;
+    background-color: #BF5B04;
+    padding: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#contenido_1 h2,
+#contenido_1 p,
+#contenido_1 a {
+    position: relative;
+    opacity: 0;
+}
+#contenido_1.animar h2,
+#contenido_1.animar p,
+#contenido_1.animar a {
+    opacity: 1;
+    animation: contenido_uno 3s 1;
+}
+@keyframes contenido_uno {
+    from { left: 50vw; }
+    to { left: 0vw; }
+}
+#contenido_2 h2,
+#contenido_2 p,
+#contenido_2 a {
+    position: relative;
+    opacity: 0;
+}
+#contenido_2.animar h2,
+#contenido_2.animar p,
+#contenido_2.animar a {
+    opacity: 1;
+    animation: contenido_dos 3s 1;
+}
+@keyframes contenido_dos {
+    from { left: -50vw; }
+    to { left: 0vw; }
+}
+#contenido_3 h2,
+#contenido_3 p,
+#contenido_3 a {
+    position: relative;
+    opacity: 0;
+}
+#contenido_3.animar h2,
+#contenido_3.animar p,
+#contenido_3.animar a {
+    opacity: 1;
+    animation: contenido_tres 3s 1;
+}
+@keyframes contenido_tres {
+    from { left: 50vw; }
+    to { left: 0vw; }
+}
+
+.contenedor .imagen-1 {
+    grid-area: imagen1;
+}
+
+.contenedor .imagen-2 {
+    grid-area: imagen2;
+}
+
+.contenedor .imagen-3 {
+    grid-area: imagen3;
+}
+
+.contenedor .contenido-1 h2,
+.contenedor .contenido-2 h2,
+.contenedor .contenido-3 h2 {
+    font-family: 'Mighty Kingdom';
+    color: #260101;
+    font-size: 7vw;
+    font-weight: lighter;
+}
+
+.contenedor .contenido-1 p,
+.contenedor .contenido-2 p,
+.contenedor .contenido-3 p {
+    margin: 1vw 0vw 4vw 0vw;
+    font-family: 'Montserrat-Regular';
+    font-size: 3vw;
+    text-align: center;
+    color: white;
+}
+.contenedor .contenido-2 p {
+    font-size: 2vw;
+}
+.contenedor .contenido-3 p {
+    font-size: 1.8vw;
+}
+.contenedor .contenido-1 p span,
+.contenedor .contenido-2 p span,
+.contenedor .contenido-3 p span {
+    font-family: 'Montserrat-Bold';
+}
+
+.contenedor .imagen-1,
+.contenedor .imagen-2,
+.contenedor .imagen-3 {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50vw;
+}
+.contenedor .imagen-1 {
+    background-image: url('../imgs/home_recetas.jpg');
+}
+.contenedor .imagen-2 {
+    background-image: url('../imgs/home_nosotros.jpg');
+}
+.contenedor .imagen-3 {
+    background-image: url('../imgs/home_historia.jpg');
+}
+#imagen_1 {
+    filter: grayscale(1);
+}
+#imagen_1.animar {
+    filter: grayscale(0);
+    animation: imagen_uno 3s 1;
+}
+@keyframes imagen_uno {
+    from { filter: grayscale(1); }
+    to { filter: grayscale(0); }
+}
+#imagen_2 {
+    opacity: 0;
+}
+#imagen_2.animar {
+    opacity: 1;
+    animation: imagen_dos 3s 1;
+}
+@keyframes imagen_dos {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+#imagen_3 {
+    background-size: auto 200%;
+}
+#imagen_3.animar {
+    background-size: auto 100%;
+    animation: imagen_tres 3s 1;
+}
+@keyframes imagen_tres {
+    from { background-size: auto 200%; }
+    to { background-size: auto 100%; }
+}
+
+.contenedor .contenido-1 a,
+.contenedor .contenido-2 a,
+.contenedor .contenido-3 a {
+    color: white;
+    font-size: 2vw;
+    font-family: 'Montserrat-Light';
+    background-color: #260101;
+    padding: 1vw 3vw;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 3vw;
+    /*Sombra*/
+    box-shadow: 0 1px 3px rgba(255, 0, 0, 0.12), 0 1px 2px rgba(255, 0, 0, 0.24);
+}
+
+.contenedor .contenido-1 a:hover,
+.contenedor .contenido-2 a:hover,
+.contenedor .contenido-3 a:hover {
+    background-color: #732002;
+
+}
+
+.contenedor .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #732002;
+    color: white;
+    padding: 5vw;
+    height: 30vw;
+    grid-area: footer;
+    text-align: center;
+}
+
+.contenedor .footer .logo-1 img {
+    height: 15vw;
+    width: auto;
+    display: block;
+    margin-bottom: 1vw;
+}
+
+.contenedor .footer .redes-f {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2vw;
+}
+
+.contenedor .footer .redes-f img {
+    height: 5vw;
+    width: auto;
+    margin: 0vw 1vw;
+}
+
+.contenedor .footer .redes-f a:hover {
+    transform: scale(1.2);
+}
+
+.contenedor .footer .copyright {
+    font-size: 1.5vw;
+}
+
+/********************************************************************************
+/*********           TAMAÑO TABLET      *****************************************
+*********************************************************************************/
+@media screen and (max-width: 768px) {
+
+    .contenedor {
+
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 8vw 40vw 55vw 55vw 55vw 25vw;
+        grid-template-areas: 
+            "enlaces enlaces enlaces enlaces enlaces"
+            "header header header header header"
+            "imagen1 imagen1 contenido1 contenido1 contenido1"
+            "contenido2 contenido2 contenido2 imagen2 imagen2"
+            "imagen3 imagen3 contenido3 contenido3 contenido3"
+            "footer footer footer footer footer";
+    }
+
+    .contenedor .enlaces {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: "logo . enlaceInterno enlaceInterno enlaceInterno redes";
+    }
+
+    .contenedor .enlaces .logo {
+        height: 6vw;
+    }
+
+    .contenedor .enlaces a {
+        font-size: 2vw;
+    }
+
+    .contenedor .enlaces .redes a {
+        width: 3vw;
+    }
+
+    .contenedor .enlaces .redes img {
+        width: 100%;
+        height: auto;
+    }
+
+    .contenedor .header {
+        padding-top: 25vw;
+    }
+
+    @keyframes contenido_uno {
+        from { left: 60vw; }
+        to { left: 0vw; }
+    }
+    @keyframes contenido_dos {
+        from { left: -60vw; }
+        to { left: 0vw; }
+    }
+    @keyframes contenido_tres {
+        from { left: 60vw; }
+        to { left: 0vw; }
+    }
+
+    .contenedor .contenido-1 h1,
+    .contenedor .contenido-2 h1,
+    .contenedor .contenido-3 h1 {
+        font-size: 3.2vw;
+        padding: 0vw 1vw 0vw 3vw;
+    }
+
+    .contenedor .contenido-1 p,
+    .contenedor .contenido-2 p {
+        font-size: 2.3vw;
+    }
+
+    .contenedor .contenido-3 p {
+        font-size: 1.9vw;
+    }
+
+    .contenedor .contenido-1 a,
+    .contenedor .contenido-2 a,
+    .contenedor .contenido-3 a {
+        float: left;
+        font-size: 1.9vw;
+        margin-top: 0;
+        margin-left: 2.4vw
+    }
+
+    .contenedor .imagen-1,
+    .contenedor .imagen-2,
+    .contenedor .imagen-3 {
+        height: 55vw;
+    }
+}
+
+/*******************************************************************************
+*********************   TAMAÑO CELULAR   ***************************************
+********************************************************************************/
+@media only screen and (max-width: 576px) {
+    body{
+        background-color: #732002;
+    }
+    .contenedor {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 22vw 40vw 55vw 40vw 60vw 40vw 70vw 40vw 25vw;
+        grid-template-areas: 
+            "enlaces enlaces"
+            "header header"
+            "contenido1 contenido1"
+            "imagen1 imagen1"
+            "contenido2 contenido2"
+            "imagen2 imagen2"
+            "contenido3 contenido3"
+            "imagen3 imagen3"
+            "footer footer";
+    }
+
+    .contenedor .enlaces {
+        padding-top: 2vw;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 10vw);
+        grid-template-areas: 
+            "logo logo redes redes"
+            "enlaceInterno enlaceInterno enlaceInterno enlaceInterno";
+    }
+
+    .contenedor .enlaces a {
+        font-size: 3vw;
+    }
+
+    .contenedor .enlaces .logo {
+        height: 12vw;
+    }
+
+    .contenedor .enlaces .redes {
+        margin-right: 10vw;
+    }
+    .contenedor .enlaces .redes a {
+        width: 6vw;
+    }
+
+    .contenedor .enlaces .redes img {
+        width: 100%;
+    }
+
+    @keyframes contenido_uno {
+        from { left: 100vw; }
+        to { left: 0vw; }
+    }
+    @keyframes contenido_dos {
+        from { left: -100vw; }
+        to { left: 0vw; }
+    }
+    @keyframes contenido_tres {
+        from { left: 100vw; }
+        to { left: 0vw; }
+    }
+
+    .contenedor .contenido-1 h1,
+    .contenedor .contenido-2 h1,
+    .contenedor .contenido-3 h1 {
+        font-size: 4.5vw;
+    }
+    .contenedor .contenido-1 p,
+    .contenedor .contenido-2 p,
+    .contenedor .contenido-3 p {
+        font-size: 3vw;
+    }
+
+    .contenedor .contenido-1 a,
+    .contenedor .contenido-2 a,
+    .contenedor .contenido-3 a {
+        font-size: 3vw;
+    }
+
+    .contenedor .imagen-1,
+    .contenedor .imagen-2,
+    .contenedor .imagen-3 {
+        height: 40vw;
+    }
+
+    #imagen_3 {
+        background-size: 200% auto;
+    }
+    #imagen_3.animar {
+        background-size: 100% auto;
+        animation: imagen_tres 3s 1;
+    }
+    @keyframes imagen_tres {
+        from { background-size: 200% auto; }
+        to { background-size: 100% auto; }
+    }
+
+    .contenedor .footer {
+        height: 60vw;
+    }
+    .contenedor .footer .logo-1 img {
+        height: 30vw;
+        margin-bottom: 4vw;
+    }
+
+    .contenedor .footer .redes-f {
+        margin-bottom: 4vw;
+    }
+
+    .contenedor .footer .redes-f img {
+        height: 10vw;
+        margin: 0vw 2vw;
+    }
+
+    .contenedor .footer .copyright {
+        font-size: 3vw;
+    }
+}
+
+/*-------------------------------------------------------------------------*/
+/*Recetas------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------*/
+/*Nosotros-----------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------*/
+/*Historia-----------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------*/
+/*Contacto-----------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/

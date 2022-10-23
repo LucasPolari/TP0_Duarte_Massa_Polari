@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/favicon.png">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos_contacto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <title>Contacto - PapaParaPreparar</title>
+</head>
+
+<body>
+    <main id="contacto" class="contenedor">
+        <nav id="header" class="enlaces">
+        </nav>
+        <div class="infocontacto" id="infocontacto">
+            <h1 class="escribinos">Escribinos</h1>
+            <p>Si te gustó alguna de nuestras recetas, llená nuestro formulario de contacto y nos comunicaremos contigo
+                para darte los detalles del envío de ingredientes... </p>
+            </div>
+        <form action="" class="formulario" id="formulario">
+
+            <!--Grupo:Nombre -->
+            <div class="formulario__grupo" id="grupo__nombre">
+                <label for="nombre" class="formulario__label">Nombre</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Juan Perez">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                </div>
+                <p class="formulario__input-error">El nombre solo puede contener letras y espacios.</p>
+            </div>
+
+            <!--Grupo:Correo Electrónico -->
+            <div class="formulario__grupo" id="grupo__correo">
+                <label for="correo" class="formulario__label">Correo Electrónico</label>
+                <div class="formulario__grupo-input">
+                    <input type="email" class="formulario__input" name="correo" id="correo"
+                        placeholder="correo@correo.com">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                </div>
+                <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y
+                    guion bajo.</p>
+            </div>
+
+            <!--Grupo:Telefóno -->
+            <div class="formulario__grupo" id="grupo__telefono">
+                <label for="telefono" class="formulario__label">Telefóno</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="5512345678">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                </div>
+                <p class="formulario__input-error">El telefono solo puede contener números y el máximo son 14
+                    digitos.</p>
+            </div>
+
+            <!--Grupo: direccion -->
+            <div class="formulario__grupo" id="grupo__direccion">
+                <label for="direccion" class="formulario__label">Dirección</label>
+                <div class="formulario__grupo-input">                    
+                    <input type="text" class="formulario__input" name="direccion"  id="direccion" placeholder="Dirección"></input>
+                    <ul id="autocomplete-results" class="autocomplete-results">
+                    </ul>
+                </div>
+                <p class="formulario__input-error">Debes indicar tu zona de residencia.</p>
+            </div>
+
+            <!--Grupo: Receta  -->
+            <div class="formulario__grupo formulario__grupo-receta" id="grupo__receta">
+                <label for="receta" class="formulario__label">Receta deseada </label>
+                <div class="formulario__grupo-input">
+                    <select class="formulario__input" name="receta" id="receta">
+                        <option value="none">(Seleccionar)</option>
+                        <option value="receta1">Puré de papas</option>
+                        <option value="receta2">Ensalada de papa con tocino ahumado</option>
+                        <option value="receta3">Ñoquis de papa con boloñesa</option>
+                        <option value="receta4">Causa Limeña</option>
+                        <option value="receta5">Ensalada rusa</option>
+                        <option value="receta6">Papas Hasselback con bacon</option>
+                        <option value="receta7">Papa rellena de carne</option>
+                        <option value="receta8">Pastel de papas</option>
+                        <option value="receta9">Croquetas de papa rellenas de queso crema</option>
+                    </select>
+                </div>
+                <p class="formulario__input-error">Debes seleccionar una receta.</p>
+            </div>
+
+            <!--Grupo:Comentarios -->
+            <div class="formulario__grupo formulario__grupo-comentarios" id="grupo__comentarios">
+                <label for="comentarios" class="formulario__label">Comentarios:</label>
+                <div class="formulario__grupo-input">
+                    <textarea class="formulario__input formulario-comentarios" name="comentarios" id=comentarios
+                        rows="10" cols="30"
+                        placeholder="Escribe aqui cualquier observacion o comentario sobre tus datos y tu pedido (Opcional)"></textarea>
+                </div>
+
+            </div>
+
+            <!-- Grupo: Terminos y condiciones -->
+            <div class="formulario__grupo formulario__grupo-tertminos" id="grupo__terminos">
+                <label class="formulario__label">
+                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">Acepto los
+                    Terminos y Condiciones
+                </label>
+            </div>
+
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p> <i class="fa-solid fa-triangle-exclamation"></i>
+                    <b>Error:</b> Por favor rellene el formulario correctamente.
+                </p>
+            </div>
+
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__btn">Enviar</button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">
+                    Formulario enviado exitosamente!
+                    Pronto nos contactaremos contigo por email para concretar los detalles de la compra y envio...
+                </p>
+            </div>
+        </form>
+        <div class="contacto-final">
+            <p>Tambien podes contactarnos por nuestro email: <i class="fa-regular fa-envelope"></i><a
+                    href="mailto:papaparapreparar@gmail.com"> papaparapreparar@gmail.com</a> o por whatsapp al <a
+                    href="https://api.whatsapp.com/send?phone=numero&text=Hola" target="_blank"> +54 9 11 2233-4455</a>
+            </p><br>
+            <p>Además podés seguirnos en <a href="https://www.facebook.com/" target="_blank">Facebook</a> y en <a
+                    href="https://www.instagram.com/" target="_blank">Instagram</a></p>
+            </div>
+
+        <footer id="footer" class="footer">
+        </footer>
+    </main>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/scriptcontacto.js"></script>
+    <script src="https://kit.fontawesome.com/e717daa850.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

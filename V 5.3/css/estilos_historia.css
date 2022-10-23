@@ -1,0 +1,96 @@
+.contenedor {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 8vw auto 25vw;
+    grid-template-areas: 
+        "enlaces enlaces"
+        "historia historia"
+        "footer footer";
+}
+#cont_historia {
+    background-color: #F2B84B;
+    grid-area: historia;
+	width: 100%;
+	margin: auto;
+	padding: 5vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+#cont_historia h1 {
+    color: #260101;
+    margin-bottom: 2vw;
+    font-family: 'Mighty Kingdom';
+    font-size: 7vw;
+    font-weight: lighter;
+}
+#cont_historia p {
+    margin: 1vw 0vw 4vw 0vw;
+    font-family: 'Montserrat-Regular';
+    font-size: 2vw;
+    text-align: center;
+    color: #000;
+}
+#cont_historia p span {
+    font-family: 'Montserrat-Bold';
+}
+
+/********************************************************************************
+/*********           TAMAÑO TABLET      *****************************************
+*********************************************************************************/
+@media screen and (max-width: 768px) {
+
+    .contenedor {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 8vw auto 25vw;
+        grid-template-areas: 
+            "enlaces enlaces enlaces enlaces enlaces"
+            "historia historia historia historia historia"
+            "footer footer footer footer footer";
+    }
+	#cont_historia {
+		width: 100%;
+		padding: 7.5vw;
+	}
+	#cont_historia h1 {
+    	margin-bottom: 3vw;
+	    font-size: 10.5vw;
+	}
+	#cont_historia p {
+	    margin: 1.5vw 0vw 6vw 0vw;
+	    font-size: 3vw;
+	}
+}
+
+/*******************************************************************************
+*********************   TAMAÑO CELULAR   ***************************************
+********************************************************************************/
+@media only screen and (max-width: 576px) {
+    body{
+        background-color: #732002;
+    }
+    .contenedor {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 22vw auto 25vw;
+        grid-template-areas: 
+            "enlaces enlaces"
+            "historia historia"
+            "footer footer";
+    }
+	#cont_historia {
+		width: 100%;
+		padding: 5vw;
+	}
+	#cont_historia h1 {
+    	margin-bottom: 4vw;
+	    font-size: 14vw;
+	}
+	#cont_historia p {
+	    margin: 2vw 0vw 8vw 0vw;
+	    font-size: 4vw;
+	}
+}
